@@ -1,0 +1,978 @@
+{
+	"info": {
+		"_postman_id": "c7f5ce4a-7234-413e-9e64-eb53cbd0a589",
+		"name": "知学云对接请求测试 正式环境",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "请求课程资源",
+			"item": [
+				{
+					"name": "请求成功用例",
+					"item": [
+						{
+							"name": "测试用例1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "测试用例2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}&pageIndex=1&pageSize=5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										},
+										{
+											"key": "pageIndex",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "请求失败用例",
+					"item": [
+						{
+							"name": "测试用例3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}&pageIndex=3&pageSize=100",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										},
+										{
+											"key": "pageIndex",
+											"value": "3"
+										},
+										{
+											"key": "pageSize",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "测试用例4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}&pageIndex=100&pageSize=-2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										},
+										{
+											"key": "pageIndex",
+											"value": "100"
+										},
+										{
+											"key": "pageSize",
+											"value": "-2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "测试用例5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}&pageIndex=20&pageSize=20",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										},
+										{
+											"key": "pageIndex",
+											"value": "20"
+										},
+										{
+											"key": "pageSize",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "测试用例6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/nc/api/resourceList?accessToken={{accessToken}}&pageIndex=-1&pageSize=20",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"nc",
+										"api",
+										"resourceList"
+									],
+									"query": [
+										{
+											"key": "accessToken",
+											"value": "{{accessToken}}"
+										},
+										{
+											"key": "pageIndex",
+											"value": "-1"
+										},
+										{
+											"key": "pageSize",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "获取学习记录",
+			"item": [
+				{
+					"name": "根据用户id获取学习记录",
+					"item": [
+						{
+							"name": "请求成功用例",
+							"item": [
+								{
+									"name": "测试用例1",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=a3d9fa47f5004fa88b8d41e0cf65682b&ds_update_time=2021-06-30&accessToken={{accessToken}}&pageIndex=8&pageSize=3",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "a3d9fa47f5004fa88b8d41e0cf65682b"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-06-30"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												},
+												{
+													"key": "pageIndex",
+													"value": "8"
+												},
+												{
+													"key": "pageSize",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例2",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=a3d9fa47f5004fa88b8d41e0cf65682b&ds_update_time=2019-01-01&courseId=f70e0aef9e6e4efa87d4e6d3e422f20d&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "a3d9fa47f5004fa88b8d41e0cf65682b"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2019-01-01"
+												},
+												{
+													"key": "courseId",
+													"value": "f70e0aef9e6e4efa87d4e6d3e422f20d"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例3",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=a3d9fa47f5004fa88b8d41e0cf65682b&ds_update_time=2021-06-30&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "a3d9fa47f5004fa88b8d41e0cf65682b"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-06-30"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例4",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=a3d9fa47f5004fa88b8d41e0cf65682b&ds_update_time=2021-06-30&accessToken={{accessToken}}&pageIndex=1&pageSize=3&courseId=f70e0aef9e6e4efa87d4e6d3e422f20d",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "a3d9fa47f5004fa88b8d41e0cf65682b"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-06-30"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												},
+												{
+													"key": "pageIndex",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "3"
+												},
+												{
+													"key": "courseId",
+													"value": "f70e0aef9e6e4efa87d4e6d3e422f20d"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "请求失败用例",
+							"item": [
+								{
+									"name": "测试用例1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.progress.length).to.eql(0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=1&ds_update_time=2021-01-02&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-01-02"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.progress.length).to.eql(0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUserId?userId=a3d9fa47f5004fa88b8d41e0cf65682b&ds_update_time=2021-01-02&courseId=1&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUserId"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "a3d9fa47f5004fa88b8d41e0cf65682b"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-01-02"
+												},
+												{
+													"key": "courseId",
+													"value": "1"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "根据部门id获取学习记录",
+					"item": [
+						{
+							"name": "请求成功用例",
+							"item": [
+								{
+									"name": "测试用例1",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-01&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例1 Copy",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-06&accessToken={{accessToken}}&pageIndex=1&pageSize=5",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-06"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												},
+												{
+													"key": "pageIndex",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例2",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-01&accessToken={{accessToken}}&pageIndex=1&pageSize=5",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												},
+												{
+													"key": "pageIndex",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例3",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-01&courseId=2894c4ba1f5040c780fc15fd157cad20&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "courseId",
+													"value": "2894c4ba1f5040c780fc15fd157cad20"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例4",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-01&courseId=2894c4ba1f5040c780fc15fd157cad20&accessToken={{accessToken}}&pageIndex=1&pageSize=4",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "courseId",
+													"value": "2894c4ba1f5040c780fc15fd157cad20"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												},
+												{
+													"key": "pageIndex",
+													"value": "1"
+												},
+												{
+													"key": "pageSize",
+													"value": "4"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "请求失败用例",
+							"item": [
+								{
+									"name": "测试用例1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.progress.length).to.eql(0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=1&ds_update_time=2021-07-01&courseId=2894c4ba1f5040c780fc15fd157cad20&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "1"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "courseId",
+													"value": "2894c4ba1f5040c780fc15fd157cad20"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Your test name\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.progress.length).to.eql(0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2021-07-01&courseId=1&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2021-07-01"
+												},
+												{
+													"key": "courseId",
+													"value": "1"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "测试用例4",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/nc/api/xxjlByUnitId?unitId=2a35c0b6b8894699bdbc4656aa1ef7bc&ds_update_time=2022-09-01&courseId=2894c4ba1f5040c780fc15fd157cad20&accessToken={{accessToken}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"nc",
+												"api",
+												"xxjlByUnitId"
+											],
+											"query": [
+												{
+													"key": "unitId",
+													"value": "2a35c0b6b8894699bdbc4656aa1ef7bc"
+												},
+												{
+													"key": "ds_update_time",
+													"value": "2022-09-01"
+												},
+												{
+													"key": "courseId",
+													"value": "2894c4ba1f5040c780fc15fd157cad20"
+												},
+												{
+													"key": "accessToken",
+													"value": "{{accessToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// 获取accessToken",
+					"var authUrl = \"http://117.73.13.181:8020/token/getToken?appKey=dreamL7ADyOb7&appSecret=f030177f6d1c642bd6a430a27026ac6eb778bdcb\";",
+					"pm.sendRequest(authUrl, function (err, response) {",
+					"    console.log(response)",
+					"    pm.collectionVariables.set(\"accessToken\", response.json().data);",
+					"});",
+					"pm.collectionVariables.set(\"host\", \"http://117.73.13.181:8083\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": null
+		},
+		{
+			"key": "host",
+			"value": ""
+		}
+	]
+}
